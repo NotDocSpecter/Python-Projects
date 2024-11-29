@@ -1,0 +1,20 @@
+def print_pascals_triangle(K):
+    for n in range(K):
+        row = []
+        for r in range(n + 1):
+            # Calculate binomial coefficient using n! / (r! * (n - r)!)
+            value = factorial(n) // (factorial(r) * factorial(n - r))
+            row.append(str(value))
+        print(" ".join(row))
+
+def factorial(num):
+    if num == 0 or num == 1:
+        return 1
+    result = 1
+    for i in range(2, num + 1):
+        result *= i
+    return result
+
+# Example usage
+K = int(input())
+print_pascals_triangle(K)
