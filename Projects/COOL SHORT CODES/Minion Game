@@ -1,0 +1,16 @@
+def minion_game(string):
+    # your code goes here
+    stuart_points= 0
+    kevin_points=0
+    for i in range(len(string)):
+        if string[i] in 'AEIOU':
+            kevin_points+= len(string)-i
+        else:
+            stuart_points+= len(string)-i
+    if kevin_points>stuart_points:
+        print('Kevin', kevin_points)
+    elif stuart_points>kevin_points:
+        print('Stuart', stuart_points)
+    else:
+        print('Draw')
+        
